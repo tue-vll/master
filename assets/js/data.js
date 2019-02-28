@@ -20,7 +20,7 @@
 	//url /path for data
 	const nb_url = 'https://data.eindhoven.nl/api/records/1.0/search/?dataset=buurten&rows=116&facet=buurtcode&facet=buurtnaam&facet=wijkcode&facet=wijknaam';
 	//const nb_url_off = '/assets/data/nb.json'; for off line
-	const sport_path = '/assets/js/Sport2017.json';
+	const sport_path = 'https://gist.githubusercontent.com/tue-vll/2f4c3018f55401c73f34b2b10f0c8a50/raw/54e876d44fe9fd81fa29b95f9dd03e66bacee174/Sport2017.json';///assets/js/Sport2017.json
 
 	// const urls = ['url', 'url', ...];
 
