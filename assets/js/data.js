@@ -20,7 +20,7 @@
 	//url /path for data
 	const nb_url = 'https://data.eindhoven.nl/api/records/1.0/search/?dataset=buurten&rows=116&facet=buurtcode&facet=buurtnaam&facet=wijkcode&facet=wijknaam';
 	//const nb_url_off = '/assets/data/nb.json'; for off line
-	const sport_path = '/assets/data/Sport2017.json';
+	const sport_path = '/assets/js/Sport2017.json';
 
 	// const urls = ['url', 'url', ...];
 
@@ -65,7 +65,7 @@
         let nbData = data[0].records; // Retrieve data covering to geojson from neighborhood polygon data of Eindhoven   
         //console.log(JSON.stringify(data[0].records));
         
-        let spData = data[1].Sport2017; //Sports participation data (percent) of each neighborhood in Eindhoven
+        let spData = data[1]; //Sports participation data (percent) of each neighborhood in Eindhoven
         
         let dataLength =  nbData.length; // Define array length for loop 
         //console.log(dataLength); // Check data length (numbers of neighborhoods)
