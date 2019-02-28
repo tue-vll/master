@@ -26,10 +26,10 @@
 
 	// Control the order of fetching data and return them as a json
 	const apiRequest1 = fetch(nb_url).then(function(response){ 
-	    return response.json()
+	    return response.json();
 	});
 	const apiRequest2 = fetch(sport_path).then(function(response){
-	         return response.json()
+	         return response.json();
 	});
 
 	Promise.all([apiRequest1,apiRequest2]).then(function(data){
