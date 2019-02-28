@@ -65,7 +65,7 @@
         let nbData = data[0].records; // Retrieve data covering to geojson from neighborhood polygon data of Eindhoven   
         //console.log(JSON.stringify(data[0].records));
         
-        let spData = data[1]; //Sports participation data (percent) of each neighborhood in Eindhoven
+        let spData = data[1].Sport2017; //Sports participation data (percent) of each neighborhood in Eindhoven
         
         let dataLength =  nbData.length; // Define array length for loop 
         //console.log(dataLength); // Check data length (numbers of neighborhoods)
