@@ -76,8 +76,11 @@
 
       <section class="datavizGrid_item">
         <h2 class="datavizGrid_item_title">Sports participation in 2017 (%)</h2>
+        <div class="datavizGrid_item_loader" aria-hidden="false">
+          <span class="datavizGrid_item_loader_spin"></span>
+        </div>
         <div id="sp-map" class="datavizGrid_item_canvas">
-          <div id="sp-tooltip" aria-hidden="true"></div>
+          <div id="sp-tooltip" class="dv-tooltip" aria-hidden="true"></div>
           <div class="sp-map_legend">
             <!-- legend -->
             <span class="sp-map_legend_title">Legend (%)</span>
@@ -115,9 +118,10 @@
       </section>
 
       <section class="datavizGrid_item">
-        <h2 class="datavizGrid_item_title"></h2>
-        <div class="datavizGrid_item_canvas">
-          
+        <h2 class="datavizGrid_item_title">Sports participation 2006-2017 (%)</h2>
+        
+        <div id="sp-line" class="datavizGrid_item_canvas">
+           <div id="spL-tooltip" class="dv-tooltip" aria-hidden="true"></div>
         </div>
         <p class="datavizGrid_item_desc">
           
