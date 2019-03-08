@@ -17,7 +17,6 @@
   <!-- Google font -->
   <link href="https://fonts.googleapis.com/css?family=Noto+Sans|Noto+Serif|Roboto+Slab" rel="stylesheet">
 
-
   <!-- css -->
   <link rel="stylesheet" href="assets/css/main.css">
   <!-- leaflet css --> 
@@ -29,14 +28,17 @@
   <!-- jQuery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <!-- <script src="assets/lib/jquery3.3.1.min.js"></script> --><!-- for off line -->
+  
+  <!-- Muuri and dependencies for drag move and sort cards -->
+  <script src="https://unpkg.com/web-animations-js@2.3.1/web-animations.min.js"></script>
+  <script src="https://unpkg.com/hammerjs@2.0.8/hammer.min.js"></script>
+  <script src="https://unpkg.com/muuri@0.7.1/dist/muuri.min.js"></script>
 
   <!-- D3 -->
   <script src="https://d3js.org/d3.v5.min.js"></script>
   <!-- <script src="assets/lib/d3.min.js"></script>  --><!-- for off line -->
   <!-- <script src="assets/lib/legacy/d3.min.4.10.2.js"></script> -->
   <!-- <script src="assets/lib/legacy/d3.min.old.js"></script> -->
-
-
 
   <!-- leaflet -->
   <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
@@ -73,60 +75,75 @@
     <h1 class="main_title">Vitality Data Catalog</h1>
     <p class="main_desc"></p>
     <div class="main_container datavizGrid">
-
-      <section class="datavizGrid_item">
-        <h2 class="datavizGrid_item_title">Sports participation in 2017 (%)</h2>
-        <div class="datavizGrid_item_loader" aria-hidden="false">
-          <span class="datavizGrid_item_loader_spin"></span>
-        </div>
-        <div id="sp-map" class="datavizGrid_item_canvas">
-          <div id="sp-tooltip" class="dv-tooltip" aria-hidden="true"></div>
-          <div class="sp-map_legend">
-            <!-- legend -->
-            <span class="sp-map_legend_title">Legend (%)</span>
-            <table class="sp-map_legend_table">
-              <col width="16">
-              <col width="">
-              <tr class="sp-map_legend_table_value4 row">
-                <td class="box"></td>
-                <td class="text">70 < 80</td>
-              </tr>
-              <tr class="sp-map_legend_table_value3 row">
-                <td class="box"></td>
-                <td class="text">60 < 70</td>
-              </tr>
-              <tr class="sp-map_legend_table_value2 row">
-                <td class="box"></td>
-                <td class="text">50 < 60</td>
-              </tr>
-              <tr class="sp-map_legend_table_value1 row">
-                <td class="box"></td>
-                <td class="text">40 < 50</td>
-              </tr>
-              <tr class="sp-map_legend_table_noData row">
-                <td class="box"></td>
-                <td class="text">No data</td>
-              </tr>
-            </table>
+      
+      <section class="">
+        <div class="datavizGrid_item">
+          <h2 class="datavizGrid_item_title">Sports participation in 2017 (%)</h2>
+          <div id="sp-map" class="datavizGrid_item_canvas">
+            <div id="sp-map-loader" class="loader" aria-hidden="false">
+              <span class="loader_spin"></span>
+            </div>
+            <div id="sp-tooltip" class="dv-tooltip" aria-hidden="true"></div>
+            <div class="sp-map_legend">
+              <!-- legend -->
+              <span class="sp-map_legend_title">Legend (%)</span>
+              <table class="sp-map_legend_table">
+                <col width="16">
+                <col width="">
+                <tr class="sp-map_legend_table_value4 row">
+                  <td class="box"></td>
+                  <td class="text">70 < 80</td>
+                </tr>
+                <tr class="sp-map_legend_table_value3 row">
+                  <td class="box"></td>
+                  <td class="text">60 < 70</td>
+                </tr>
+                <tr class="sp-map_legend_table_value2 row">
+                  <td class="box"></td>
+                  <td class="text">50 < 60</td>
+                </tr>
+                <tr class="sp-map_legend_table_value1 row">
+                  <td class="box"></td>
+                  <td class="text">40 < 50</td>
+                </tr>
+                <tr class="sp-map_legend_table_noData row">
+                  <td class="box"></td>
+                  <td class="text">No data</td>
+                </tr>
+              </table>
+            </div>
           </div>
-        </div>
-  
-        <p class="datavizGrid_item_desc">
-          
-        </p>
+          <p class="datavizGrid_item_desc">
+            
+          </p>
+      </div>
+    </section>
 
-      </section>
-
-      <section class="datavizGrid_item">
+    <section class="">
+      <div class="datavizGrid_item">
         <h2 class="datavizGrid_item_title">Sports participation 2006-2017 (%)</h2>
         
         <div id="sp-line" class="datavizGrid_item_canvas">
+           <div id="sp-line-loader" class="loader" aria-hidden="false">
+               <span class="loader_spin"></span>
+            </div>
            <div id="spL-tooltip" class="dv-tooltip" aria-hidden="true"></div>
         </div>
         <p class="datavizGrid_item_desc">
           
         </p>
-      </section>
+      </div>
+    </section>
+
+    <section class="datavizGrid_item">
+        <h2 class="datavizGrid_item_title"></h2>
+        <div class="datavizGrid_item_canvas">
+          
+        </div>
+        <p class="datavizGrid_item_desc">
+          
+        </p>
+    </section>
 
       <section class="datavizGrid_item">
         <h2 class="datavizGrid_item_title"></h2>
@@ -147,16 +164,7 @@
           
         </p>
       </section>
-
-       <section class="datavizGrid_item">
-        <h2 class="datavizGrid_item_title"></h2>
-        <div class="datavizGrid_item_canvas">
-          
-        </div>
-        <p class="datavizGrid_item_desc">
-          
-        </p>
-      </section>
+    
 
        <section class="datavizGrid_item">
         <h2 class="datavizGrid_item_title"></h2>
