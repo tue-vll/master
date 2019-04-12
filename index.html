@@ -25,6 +25,8 @@
   crossorigin=""/> -->
   <link rel="stylesheet" href="assets/css/leaflet.css"><!-- for off line -->
 
+  <!-- font awesome for icons -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
   <!-- jQuery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <!-- <script src="assets/lib/jquery3.3.1.min.js"></script> --><!-- for off line -->
@@ -74,117 +76,118 @@
   <main class="main">
     <h1 class="main_title">Vitality Data Catalog</h1>
     <p class="main_desc"></p>
-    <div class="main_container datavizGrid">
-      
-      
-        <section class="datavizGrid_item">
-          <h2 class="datavizGrid_item_title">Sports participation in 2017 (%)</h2>
-          <div id="sp-map" class="datavizGrid_item_canvas">
-            <div id="sp-map-loader" class="loader" aria-hidden="false">
-              <span class="loader_spin"></span>
+
+    <div class="main_dashboard grid-wrapper">
+      <div class="main_dashboard_controls filter-controls">
+        <div class="main_dashboard_controls_search control">
+          <div class="control-icon">
+            <i class="fas fa-search"></i>
+          </div>
+          <input class="search-field form-control" type="text" name="search" placeholder="Search..." />
+        </div>
+        <div class="main_dashboard_controls_filter cntrol">
+          <div class="control-icon">
+            <i class="fas fa-filter"></i>
+          </div>
+          <select class="filter-field form-control custom-select1">
+            <option value="" selected>All</option>
+            <option value="sports">Sports</option>
+            <option value="environment">Environment</option>
+          </select>
+        </div>
+        <!-- <div class="main_dashboard_controls_sort">
+          <div class="control-icon">
+          </div>
+          <div class="select-arrow">
+          </div>
+        </div> -->
+      </div>
+
+      <div class="main_dashboard_container grid">
+          <section class="item" data-category="sports" data-title="Sports participation in 2017">
+            <div class="datavizGrid">
+              <div class="datavizGrid_item">
+                  <h2 class="datavizGrid_item_title title-drag">Sports participation in 2017 (%)</h2>
+                  <div id="sp-map" class="datavizGrid_item_canvas">
+                    <div id="sp-map-loader" class="loader" aria-hidden="false">
+                      <span class="loader_spin"></span>
+                    </div>
+                    <div id="sp-tooltip" class="dv-tooltip" aria-hidden="true"></div>
+                    <div class="sp-map_legend">
+                      <!-- legend -->
+                      <span class="sp-map_legend_title">Legend (%)</span>
+                      <table class="sp-map_legend_table">
+                        <col width="16">
+                        <col width="">
+                        <tr class="sp-map_legend_table_value4 row">
+                          <td class="box"></td>
+                          <td class="text">70 < 80</td>
+                        </tr>
+                        <tr class="sp-map_legend_table_value3 row">
+                          <td class="box"></td>
+                          <td class="text">60 < 70</td>
+                        </tr>
+                        <tr class="sp-map_legend_table_value2 row">
+                          <td class="box"></td>
+                          <td class="text">50 < 60</td>
+                        </tr>
+                        <tr class="sp-map_legend_table_value1 row">
+                          <td class="box"></td>
+                          <td class="text">40 < 50</td>
+                        </tr>
+                        <tr class="sp-map_legend_table_noData row">
+                          <td class="box"></td>
+                          <td class="text">No data</td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+                  <p class="datavizGrid_item_desc">
+                    
+                  </p>
+                
+              </div>
             </div>
-            <div id="sp-tooltip" class="dv-tooltip" aria-hidden="true"></div>
-            <div class="sp-map_legend">
-              <!-- legend -->
-              <span class="sp-map_legend_title">Legend (%)</span>
-              <table class="sp-map_legend_table">
-                <col width="16">
-                <col width="">
-                <tr class="sp-map_legend_table_value4 row">
-                  <td class="box"></td>
-                  <td class="text">70 < 80</td>
-                </tr>
-                <tr class="sp-map_legend_table_value3 row">
-                  <td class="box"></td>
-                  <td class="text">60 < 70</td>
-                </tr>
-                <tr class="sp-map_legend_table_value2 row">
-                  <td class="box"></td>
-                  <td class="text">50 < 60</td>
-                </tr>
-                <tr class="sp-map_legend_table_value1 row">
-                  <td class="box"></td>
-                  <td class="text">40 < 50</td>
-                </tr>
-                <tr class="sp-map_legend_table_noData row">
-                  <td class="box"></td>
-                  <td class="text">No data</td>
-                </tr>
-              </table>
+        </section>
+
+        <section class="item" data-category="sports" data-title="Sports participation 2006-2017">
+          <div class="datavizGrid">
+              <div class="datavizGrid_item">
+                <h2 class="datavizGrid_item_title title-drag">Sports participation 2006-2017 (%)</h2>
+                
+                <div id="sp-line" class="datavizGrid_item_canvas">
+                   <div id="sp-line-loader" class="loader" aria-hidden="false">
+                       <span class="loader_spin"></span>
+                    </div>
+                   <div id="spL-tooltip" class="dv-tooltip" aria-hidden="true"></div>
+                </div>
+                <p class="datavizGrid_item_desc">
+                  
+                </p>
             </div>
           </div>
-          <p class="datavizGrid_item_desc">
-            
-          </p>
-      </section>
+        </section>
 
-      <section class="datavizGrid_item">
-        <h2 class="datavizGrid_item_title">Sports participation 2006-2017 (%)</h2>
-        
-        <div id="sp-line" class="datavizGrid_item_canvas">
-           <div id="sp-line-loader" class="loader" aria-hidden="false">
-               <span class="loader_spin"></span>
+       <section class="item" data-category="environment" data-title="Street lights">
+          <div class="datavizGrid">
+              <div class="datavizGrid_item">
+                <h2 class="datavizGrid_item_title title-drag">Street lights</h2>
+                
+                <div id="pb-lights" class="datavizGrid_item_canvas">
+                   <div id="pb-lights-loader" class="loader" aria-hidden="false">
+                       <span class="loader_spin"></span>
+                    </div>
+                   <div id="pb-lights-tooltip" class="dv-tooltip" aria-hidden="true"></div>
+                </div>
+                <p class="datavizGrid_item_desc">
+                  
+                </p>
+              </div>
             </div>
-           <div id="spL-tooltip" class="dv-tooltip" aria-hidden="true"></div>
-        </div>
-        <p class="datavizGrid_item_desc">
-          
-        </p>
-      </section>
-
-     <section class="datavizGrid_item">
-        <h2 class="datavizGrid_item_title">Street lights</h2>
-        
-        <div id="pb-lights" class="datavizGrid_item_canvas">
-           <div id="pb-lights-loader" class="loader" aria-hidden="false">
-               <span class="loader_spin"></span>
-            </div>
-           <div id="pb-lights-tooltip" class="dv-tooltip" aria-hidden="true"></div>
-        </div>
-        <p class="datavizGrid_item_desc">
-          
-        </p>
-      </section>
-
-      <section class="datavizGrid_item">
-        <h2 class="datavizGrid_item_title"></h2>
-        <div class="datavizGrid_item_canvas">
-          
-        </div>
-        <p class="datavizGrid_item_desc">
-          
-        </p>
-      </section>
-
-       <section class="datavizGrid_item">
-        <h2 class="datavizGrid_item_title"></h2>
-        <div class="datavizGrid_item_canvas">
-          
-        </div>
-        <p class="datavizGrid_item_desc">
-          
-        </p>
-      </section>
-    
-
-       <section class="datavizGrid_item">
-        <h2 class="datavizGrid_item_title"></h2>
-        <div class="datavizGrid_item_canvas">
-          
-        </div>
-        <p class="datavizGrid_item_desc">
-          
-        </p>
-      </section>
-
-
-
+        </section>
+      </div>
     </div>
   </main>
-
-  <!-- <div id="maptest">
-        
-  </div> -->
 
   <footer class="l-footer">
       <div class="l-footer_left">
@@ -196,7 +199,7 @@
         
       </div>
   </footer>
-
+  
   <script src="assets/js/main.js"></script>
   <script src="assets/js/data.js"></script>
 
