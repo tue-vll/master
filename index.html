@@ -55,7 +55,10 @@
   crossorigin=""></script>
   
   <!-- <script src="assets/lib/esri-leaflet.js"></script>  --> <!-- for off line -->
-
+  
+  <!-- Turf.js for spatial analysis -->
+  <!-- <script src='https://npmcdn.com/@turf/turf/turf.min.js'></script>
+ -->
 </head>
 
 <body>
@@ -104,38 +107,42 @@
       </div>
 
       <div class="main_dashboard_container grid">
+
+          <!-- mp1 -->
           <section class="item" data-category="sports" data-title="Sports participation in 2017">
             <div class="datavizGrid">
               <div class="datavizGrid_item">
+                  <!-- <button id="layering_test" style="position: absolute; top: 0px; right: 0px; z-index: 9999;">Layering</button> -->
                   <h2 class="datavizGrid_item_title title-drag">Sports participation in 2017 (%)</h2>
-                  <div id="sp-map" class="datavizGrid_item_canvas">
-                    <div id="sp-map-loader" class="loader" aria-hidden="false">
+                  <div id="mp1" class="datavizGrid_item_canvas">
+
+                    <div id="mp1-loader" class="loader" aria-hidden="false">
                       <span class="loader_spin"></span>
                     </div>
-                    <div id="sp-tooltip" class="dv-tooltip" aria-hidden="true"></div>
-                    <div class="sp-map_legend">
+                    <div id="mp1-tooltip" class="dv-tooltip" aria-hidden="true"></div>
+                    <div class="mp1_legend">
                       <!-- legend -->
-                      <span class="sp-map_legend_title">Legend (%)</span>
-                      <table class="sp-map_legend_table">
+                      <span class="mp1_legend_title">Legend (%)</span>
+                      <table class="mp1_legend_table">
                         <col width="16">
                         <col width="">
-                        <tr class="sp-map_legend_table_value4 row">
+                        <tr class="mp1_legend_table_value4 row">
                           <td class="box"></td>
                           <td class="text">70 < 80</td>
                         </tr>
-                        <tr class="sp-map_legend_table_value3 row">
+                        <tr class="mp1_legend_table_value3 row">
                           <td class="box"></td>
                           <td class="text">60 < 70</td>
                         </tr>
-                        <tr class="sp-map_legend_table_value2 row">
+                        <tr class="mp1_legend_table_value2 row">
                           <td class="box"></td>
                           <td class="text">50 < 60</td>
                         </tr>
-                        <tr class="sp-map_legend_table_value1 row">
+                        <tr class="mp1_legend_table_value1 row">
                           <td class="box"></td>
                           <td class="text">40 < 50</td>
                         </tr>
-                        <tr class="sp-map_legend_table_noData row">
+                        <tr class="mp1_legend_table_noData row">
                           <td class="box"></td>
                           <td class="text">No data</td>
                         </tr>
@@ -148,36 +155,57 @@
                 
               </div>
             </div>
-        </section>
-
-        <section class="item" data-category="sports" data-title="Sports participation 2006-2017">
-          <div class="datavizGrid">
-              <div class="datavizGrid_item">
-                <h2 class="datavizGrid_item_title title-drag">Sports participation 2006-2017 (%)</h2>
-                
-                <div id="sp-line" class="datavizGrid_item_canvas">
-                   <div id="sp-line-loader" class="loader" aria-hidden="false">
-                       <span class="loader_spin"></span>
-                    </div>
-                   <div id="spL-tooltip" class="dv-tooltip" aria-hidden="true"></div>
-                </div>
-                <p class="datavizGrid_item_desc">
+          </section>
+        
+          <!-- ln1 -->
+          <section class="item" data-category="sports" data-title="Sports participation 2006-2017">
+            <div class="datavizGrid">
+                <div class="datavizGrid_item">
+                  <h2 class="datavizGrid_item_title title-drag">Sports participation 2006-2017 (%)</h2>
                   
-                </p>
+                  <div id="ln1" class="datavizGrid_item_canvas">
+                     <div id="ln1-loader" class="loader" aria-hidden="false">
+                         <span class="loader_spin"></span>
+                      </div>
+                     <div id="ln1-tooltip" class="dv-tooltip" aria-hidden="true"></div>
+                  </div>
+                  <p class="datavizGrid_item_desc">
+                    
+                  </p>
+              </div>
             </div>
-          </div>
-        </section>
-
-       <section class="item" data-category="environment" data-title="Street lights">
+          </section>
+      
+         <!-- mp2 -->
+         <section class="item" data-category="environment" data-title="Street lights">
+            <div class="datavizGrid">
+                <div class="datavizGrid_item">
+                  <h2 class="datavizGrid_item_title title-drag">Street lights</h2>
+                  
+                  <div id="mp2" class="datavizGrid_item_canvas">
+                     <div id="mp2-loader" class="loader" aria-hidden="false">
+                         <span class="loader_spin"></span>
+                      </div>
+                     <div id="mp2-tooltip" class="dv-tooltip" aria-hidden="true"></div>
+                  </div>
+                  <p class="datavizGrid_item_desc">
+                    
+                  </p>
+                </div>
+              </div>
+          </section>
+      
+        <!-- mp3 -->
+        <section class="item" data-category="environment" data-title="Green space">
           <div class="datavizGrid">
               <div class="datavizGrid_item">
-                <h2 class="datavizGrid_item_title title-drag">Street lights</h2>
+                <h2 class="datavizGrid_item_title title-drag">Green space</h2>
                 
-                <div id="pb-lights" class="datavizGrid_item_canvas">
-                   <div id="pb-lights-loader" class="loader" aria-hidden="false">
+                <div id="mp3" class="datavizGrid_item_canvas">
+                   <div id="mp3-loader" class="loader" aria-hidden="false">
                        <span class="loader_spin"></span>
                     </div>
-                   <div id="pb-lights-tooltip" class="dv-tooltip" aria-hidden="true"></div>
+                   <div id="mp3-tooltip" class="dv-tooltip" aria-hidden="true"></div>
                 </div>
                 <p class="datavizGrid_item_desc">
                   
@@ -185,6 +213,25 @@
               </div>
             </div>
         </section>
+
+        <!-- test -->
+        <section class="item" data-category="test" data-title="test">
+          <div class="datavizGrid">
+              <div class="datavizGrid_item">
+                <h2 class="datavizGrid_item_title title-drag">test</h2>
+                
+                <div id="test" class="datavizGrid_item_canvas">
+                   
+                   <div id="test-loader" class="loader" aria-hidden="true">
+                       <span class="loader_spin"></span>
+                    </div>
+                   <div id="test-tooltip" class="dv-tooltip" aria-hidden="true"></div>
+                </div>
+                <p class="datavizGrid_item_desc">
+                  
+                </p>
+              </div>
+            </div>
       </div>
     </div>
   </main>
