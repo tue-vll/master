@@ -1,77 +1,72 @@
 <!doctype html>
-
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-　<meta name="viewport" content="width=device-width,initial-scale=1"> <!-- for responsible -->
-  <title>VLL Data System test page</title>
-  <meta name="description" content="Vitality Living Lab Data System test page">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- protect ie compatible mode -->
-  <!-- <link rel="icon" href="favicon.ico">  --><!-- add later -->
-  <meta name="Kenji Wada" content="">
-  <!-- for windows -->
-  <!-- <meta name="msapplication-TileImage" content="image URL" /> -->
-  <!-- <meta name="msapplication-TileColor" content="color code"/> -->
-  <!-- OGP tags for social media -->
 
-  <!-- Google font -->
-  <link href="https://fonts.googleapis.com/css?family=Noto+Sans|Noto+Serif|Roboto+Slab" rel="stylesheet">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1"> <!-- for responsible -->
+    <title>VLL Data System test page</title>
+    <meta name="description" content="Vitality Living Lab Data System test page">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- protect ie compatible mode -->
+    <!-- <link rel="icon" href="favicon.ico">  --><!-- add later -->
+    <meta name="Kenji Wada" content="">
+    <!-- for windows -->
+    <!-- <meta name="msapplication-TileImage" content="image URL" /> -->
+    <!-- <meta name="msapplication-TileColor" content="color code"/> -->
+    <!-- OGP tags for social media -->
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans|Noto+Serif|Roboto+Slab" rel="stylesheet">
+    <!-- css -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <!-- leaflet css -->
+    <!-- <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
+      integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+      crossorigin=""/> -->
+    <link rel="stylesheet" href="assets/css/leaflet.css"><!-- for off line -->
+    <!-- font awesome for icons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- <script src="assets/lib/jquery3.3.1.min.js"></script> --><!-- for off line -->
+    
+    <!-- Muuri and dependencies for drag move and sort cards -->
+    <script src="https://unpkg.com/web-animations-js@2.3.1/web-animations.min.js"></script>
+    <script src="https://unpkg.com/hammerjs@2.0.8/hammer.min.js"></script>
+    <script src="https://unpkg.com/muuri@0.7.1/dist/muuri.min.js"></script>
+    <!-- D3 -->
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <!-- <script src="assets/lib/d3.min.js"></script>  --><!-- for off line -->
+    <!-- <script src="assets/lib/legacy/d3.min.4.10.2.js"></script> -->
+    <!-- <script src="assets/lib/legacy/d3.min.old.js"></script> -->
+    <!-- leaflet -->
+    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
+    integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+    crossorigin=""></script>
+    <!-- <script src="assets/lib/leaflet.js"></script> --><!-- for off line -->
+    <!-- <script src="assets/lib/legacy/leaflet.js"></script> -->
+    <!-- ESRI map layers -->
+    <script src="https://unpkg.com/esri-leaflet@2.2.3/dist/esri-leaflet.js"
+    integrity="sha512-YZ6b5bXRVwipfqul5krehD9qlbJzc6KOGXYsDjU9HHXW2gK57xmWl2gU6nAegiErAqFXhygKIsWPKbjLPXVb2g=="
+    crossorigin=""></script>
+    
+    <!-- <script src="assets/lib/esri-leaflet.js"></script>  --> <!-- for off line -->
+    
+    <!-- Turf.js for spatial analysis -->
+    <!-- <script src='https://npmcdn.com/@turf/turf/turf.min.js'></script>
+    -->
+  </head>
 
-  <!-- css -->
-  <link rel="stylesheet" href="assets/css/main.css">
-  <!-- leaflet css --> 
-  <!-- <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
-  integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
-  crossorigin=""/> -->
-  <link rel="stylesheet" href="assets/css/leaflet.css"><!-- for off line -->
-
-  <!-- font awesome for icons -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-  <!-- jQuery -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <!-- <script src="assets/lib/jquery3.3.1.min.js"></script> --><!-- for off line -->
-  
-  <!-- Muuri and dependencies for drag move and sort cards -->
-  <script src="https://unpkg.com/web-animations-js@2.3.1/web-animations.min.js"></script>
-  <script src="https://unpkg.com/hammerjs@2.0.8/hammer.min.js"></script>
-  <script src="https://unpkg.com/muuri@0.7.1/dist/muuri.min.js"></script>
-
-  <!-- D3 -->
-  <script src="https://d3js.org/d3.v5.min.js"></script>
-  <!-- <script src="assets/lib/d3.min.js"></script>  --><!-- for off line -->
-  <!-- <script src="assets/lib/legacy/d3.min.4.10.2.js"></script> -->
-  <!-- <script src="assets/lib/legacy/d3.min.old.js"></script> -->
-
-  <!-- leaflet -->
-  <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
-  integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
-  crossorigin=""></script>
-  <!-- <script src="assets/lib/leaflet.js"></script> --><!-- for off line -->
-  <!-- <script src="assets/lib/legacy/leaflet.js"></script> -->
-
-  <!-- ESRI map layers -->
-  <script src="https://unpkg.com/esri-leaflet@2.2.3/dist/esri-leaflet.js"
-  integrity="sha512-YZ6b5bXRVwipfqul5krehD9qlbJzc6KOGXYsDjU9HHXW2gK57xmWl2gU6nAegiErAqFXhygKIsWPKbjLPXVb2g=="
-  crossorigin=""></script>
-  
-  <!-- <script src="assets/lib/esri-leaflet.js"></script>  --> <!-- for off line -->
-  
-  <!-- Turf.js for spatial analysis -->
-  <!-- <script src='https://npmcdn.com/@turf/turf/turf.min.js'></script>
- -->
-</head>
-
-<body>
-  <div id="page-hinder" aria-hidden="true"></div>
-  <!-- header -->
-  <hearder class="l-header">
-    <div class="l-header_content">
-      <div class="l-header_content_left">
+  <body>
+    <!-- ovelay background when modals are active -->
+    <div id="page-hinder" aria-hidden="true"></div>
+    <!-- header -->
+    <hearder class="l-header">
+      <div class="l-header_content">
+        <div class="l-header_content_left">
           <img src="assets/img/VLL_logo.png" alt="Vitality Living Lab logo" height="56px">
-      </div>
-      <div class="l-header_content_right">
+        </div>
+        <div class="l-header_content_right">
           <div id="dataSystem-title" class="l-header_content_right_title">
-            DataSystem  
+            DataSystem
           </div>
           <div class="l-header_content_right_options">
             <div class="control-icon">
@@ -81,105 +76,99 @@
               <i class="fas fa-bars fa-lg"></i>
             </div>
           </div>
-      </div>
-    </div>
-  </hearder>
-
-  <main class="main">
-    <h1 class="main_title">Vitality Data Catalog</h1>
-    <p class="main_desc"></p>
-
-    <div class="main_dashboard grid-wrapper">
-      <div class="main_dashboard_controls filter-controls">
-        <div class="main_dashboard_controls_search control">
-          <div class="control-icon">
-            <i class="fas fa-search"></i>
-          </div>
-          <input class="search-field form-control" type="text" name="search" placeholder="Search..." />
-        </div>
-        <div class="main_dashboard_controls_filter control">
-          <div class="control-icon">
-            <i class="fas fa-filter"></i>
-          </div>
-          <div class="main_dashboard_controls_filter_select">
-            <select class="filter-field form-control custom-select1">
-              <option value="" selected>All</option>
-              <option value="sports">Sports</option>
-              <option value="environment">Environment</option>
-              <option value="infrastructure">Infrastructure</option>
-            </select>
-            <div class="main_dashboard_controls_filter_arrow"></div>
-          </div>
-        </div>
-        <!-- <div class="main_dashboard_controls_sort">
-          <div class="control-icon">
-          </div>
-          <div class="select-arrow">
-          </div>
-        </div> -->
-      </div>
-      <div id="Bennekel-modal" aria-hidden="true">
-        <div id="Bennekel-modal_inner">
-          <h2 class="title">Barriers for sports / exercise</h2>
-          <span class="close" id="Bennekel-modal-close">
-            <i class="fas fa-times"></i>
-          </span>
         </div>
       </div>
+    </hearder>
 
-      <div class="main_dashboard_container grid">
+    <!-- Tooltips -->
+    <div class="mp1-tooltip dv-tooltip" aria-hidden="true"></div>
+    <div class="ln1-tooltip dv-tooltip" aria-hidden="true"></div>
+    <div class="mp2-tooltip dv-tooltip" aria-hidden="true"></div>
+    <div class="mp3-tooltip dv-tooltip" aria-hidden="true"></div>
+    <div class="mp4-tooltip dv-tooltip" aria-hidden="true"></div>
+
+    <main class="main">
+
+      <h1 class="main_title">Vitality Data Catalog</h1>
+      <p class="main_desc"></p>
+      <div class="main_dashboard grid-wrapper">
+        <div class="main_dashboard_controls filter-controls">
+          <div class="main_dashboard_controls_search control">
+            <div class="control-icon">
+              <i class="fas fa-search"></i>
+            </div>
+            <input class="search-field form-control" type="text" name="search" placeholder="Search..." />
+          </div>
+          <div class="main_dashboard_controls_filter control">
+            <div class="control-icon">
+              <i class="fas fa-filter"></i>
+            </div>
+            <div class="main_dashboard_controls_filter_select">
+              <select class="filter-field form-control custom-select1">
+                <option value="" selected>All</option>
+                <option value="sports">Sports</option>
+                <option value="environment">Environment</option>
+                <option value="infrastructure">Infrastructure</option>
+              </select>
+              <div class="main_dashboard_controls_filter_arrow"></div>
+            </div>
+          </div>
+        </div>
+        <div id="Bennekel-modal" aria-hidden="true">
+          <div id="Bennekel-modal_inner">
+            <h2 class="title">Barriers for sports/exercise in Bennekel</h2>
+            <span class="close" id="Bennekel-modal-close">
+              <i class="fas fa-times"></i>
+            </span>
+          </div>
+        </div>
+
+        <div class="main_dashboard_container grid">
           
           <!-- mp1 -->
           <section class="item" data-category="sports" data-title="Sports participation in 2017">
             <div class="datavizGrid">
               <div class="datavizGrid_item">
-                  <!-- <button id="layering_test" style="position: absolute; top: 0px; right: 0px; z-index: 9999;">Layering</button> -->
-                  <h2 class="datavizGrid_item_title title-drag">Sports participation in 2017 (%)</h2>
-
-                  <div id="mp1" class="datavizGrid_item_canvas"></div>
-                  
-                  <div class="dv-overlay" aria-selected="false" id="thistest">
-                      <i class="fas fa-layer-group fa-lg"></i>
-                  </div>
-                  <div class="dv-layers" aria-hidden="true">
-                    <ul class="dv-layers_list"></ul>                   
-                  </div>
-                  <div id="mp1-loader" class="loader" aria-hidden="false">
-                      <span class="loader_spin"></span>
-                  </div>
-                  <div id="mp1-tooltip" class="dv-tooltip" aria-hidden="true"></div>
-                  
-                  <div class="map_legend" id="mp1-legend">
-                    <!-- legend -->
-                    <span class="map_legend_title">Legend (%)</span>
-                    <table class="map_legend_table">
-                      <col width="16">
-                      <col width="">
-                      <tr class="value4 row">
-                        <td class="box"></td>
-                        <td class="text">70 < 80</td>
-                      </tr>
-                      <tr class="value3 row">
-                        <td class="box"></td>
-                        <td class="text">60 < 70</td>
-                      </tr>
-                      <tr class="value2 row">
-                        <td class="box"></td>
-                        <td class="text">50 < 60</td>
-                      </tr>
-                      <tr class="value1 row">
-                        <td class="box"></td>
-                        <td class="text">40 < 50</td>
-                      </tr>
-                      <tr class="noData row">
-                        <td class="box"></td>
-                        <td class="text">No data</td>
-                      </tr>
-                    </table>
-                  </div>
-                  <p class="datavizGrid_item_desc">
-                    
-                  </p>      
+                <h2 class="datavizGrid_item_title title-drag">Sports participation in 2017 (%)</h2>
+                <div id="mp1" class="datavizGrid_item_canvas"></div>
+                <div class="dv-overlay" aria-selected="false" id="mp1-layers">
+                  <i class="fas fa-layer-group fa-lg"></i>
+                </div>
+                <div class="dv-layers" aria-hidden="true">
+                  <ul class="dv-layers_list" id="onmp1"></ul>
+                </div>
+                <div id="mp1-loader" class="loader" aria-hidden="false">
+                  <span class="loader_spin"></span>
+                </div>
+                <div class="map_legend" id="mp1-legend">
+                  <!-- legend -->
+                  <span class="map_legend_title">Legend (%)</span>
+                  <table class="map_legend_table">
+                    <col width="16">
+                    <col width="">
+                    <tr class="value4 row">
+                      <td class="box"></td>
+                      <td class="text">70 < 80</td>
+                    </tr>
+                    <tr class="value3 row">
+                      <td class="box"></td>
+                      <td class="text">60 < 70</td>
+                    </tr>
+                    <tr class="value2 row">
+                      <td class="box"></td>
+                      <td class="text">50 < 60</td>
+                    </tr>
+                    <tr class="value1 row">
+                      <td class="box"></td>
+                      <td class="text">40 < 50</td>
+                    </tr>
+                    <tr class="noData row">
+                      <td class="box"></td>
+                      <td class="text">No data</td>
+                    </tr>
+                  </table>
+                </div>
+                <p class="datavizGrid_item_desc"></p>
               </div>
             </div>
           </section>
@@ -187,53 +176,43 @@
           <!-- ln1 -->
           <section class="item" data-category="sports" data-title="Sports participation 2006-2017">
             <div class="datavizGrid">
-                <div class="datavizGrid_item">
-                  <h2 class="datavizGrid_item_title title-drag">Sports participation 2006-2017 (%)</h2>
-                  
-                  <div id="ln1" class="datavizGrid_item_canvas">
-                    <div id="ln1-loader" class="loader" aria-hidden="false">
-                         <span class="loader_spin"></span>
-                    </div>
-                    <div id="ln1-tooltip" class="dv-tooltip" aria-hidden="true"></div>
-
+              <div class="datavizGrid_item">
+                <h2 class="datavizGrid_item_title title-drag">Sports participation 2006-2017 (%)</h2>
+                <div id="ln1" class="datavizGrid_item_canvas">
+                  <div id="ln1-loader" class="loader" aria-hidden="false">
+                    <span class="loader_spin"></span>
                   </div>
-                  <p class="datavizGrid_item_desc">
-                    
-                  </p>
+                </div>
+                <p class="datavizGrid_item_desc"></p>
               </div>
             </div>
           </section>
-      
-         <!-- mp2 -->
-         <section class="item" data-category="infrastructure" data-title="Street lights">
+        
+          <!-- mp2 -->
+          <section class="item" data-category="infrastructure" data-title="Street lights">
             <div class="datavizGrid">
-                <div class="datavizGrid_item">
-                  <h2 class="datavizGrid_item_title title-drag">Street lights</h2>
-                  
-                  <div id="mp2" class="datavizGrid_item_canvas">
-                     <div id="mp2-loader" class="loader" aria-hidden="false">
-                         <span class="loader_spin"></span>
-                      </div>
-                     <div id="mp2-tooltip" class="dv-tooltip" aria-hidden="true"></div>
+              <div class="datavizGrid_item">
+                <h2 class="datavizGrid_item_title title-drag">Street lights</h2>
+                
+                <div id="mp2" class="datavizGrid_item_canvas">
+                  <div id="mp2-loader" class="loader" aria-hidden="false">
+                    <span class="loader_spin"></span>
                   </div>
-                  <p class="datavizGrid_item_desc">
-                    
-                  </p>
                 </div>
+                <p class="datavizGrid_item_desc"></p>
               </div>
+            </div>
           </section>
-      
-        <!-- mp3 -->
-        <section class="item" data-category="environment" data-title="Green space">
-          <div class="datavizGrid">
+        
+          <!-- mp3 -->
+          <section class="item" data-category="environment" data-title="Green space">
+            <div class="datavizGrid">
               <div class="datavizGrid_item">
                 <h2 class="datavizGrid_item_title title-drag">Green space</h2>
-                
                 <div id="mp3" class="datavizGrid_item_canvas">
                   <div id="mp3-loader" class="loader" aria-hidden="false">
                     <span class="loader_spin"></span>
                   </div>
-                  <div id="mp3-tooltip" class="dv-tooltip" aria-hidden="true"></div>
                   <div class="map_legend">
                     <!-- legend -->
                     <span class="map_legend_title">Legend (Type)</span>
@@ -275,73 +254,59 @@
                     </table>
                   </div>
                 </div>
+                <p class="datavizGrid_item_desc"></p>
+              </div>
+            </div>
+          </section>
+        
+          <!-- mp4 -->
+          <section class="item" data-category="infrastructure" data-title="Bike routes">
+            <div class="datavizGrid">
+              <div class="datavizGrid_item">
+                <h2 class="datavizGrid_item_title title-drag">Bike routes</h2>
+                
+                <div id="mp4" class="datavizGrid_item_canvas">
+                  <div id="mp4-loader" class="loader" aria-hidden="false">
+                    <span class="loader_spin"></span>
+                  </div>
+                </div>
                 <p class="datavizGrid_item_desc">
-                  
                 </p>
               </div>
             </div>
-        </section>
+          </section>
 
-        <!-- mp4 -->
-        <section class="item" data-category="infrastructure" data-title="Bike routes">
-          <div class="datavizGrid">
-            <div class="datavizGrid_item">
-              <h2 class="datavizGrid_item_title title-drag">Bike routes</h2>
-              
-              <div id="mp4" class="datavizGrid_item_canvas">
-                 
-                 <div id="mp4-loader" class="loader" aria-hidden="false">
-                     <span class="loader_spin"></span>
+          <!-- test > try real-time data here? -->
+          <section class="item" data-category="test" data-title="test">
+            <div class="datavizGrid">
+              <div class="datavizGrid_item">
+                <h2 class="datavizGrid_item_title title-drag">test</h2>
+                <div id="test" class="datavizGrid_item_canvas">
+                  <div id="test-loader" class="loader" aria-hidden="false">
+                    <span class="loader_spin"></span>
                   </div>
-                 <div id="mp4-tooltip" class="dv-tooltip" aria-hidden="true"></div>
+                  <div id="test-tooltip" class="dv-tooltip" aria-hidden="true"></div>
+                </div>
+                <p class="datavizGrid_item_desc"></p>
               </div>
-              
-              <p class="datavizGrid_item_desc">
-                
-              </p>
             </div>
-          </div>
-        </section>
-
-        <!-- test -->
-        <section class="item" data-category="test" data-title="test">
-          <div class="datavizGrid">
-            <div class="datavizGrid_item">
-              <h2 class="datavizGrid_item_title title-drag">test</h2>
-              
-              <div id="test" class="datavizGrid_item_canvas">
-                 
-                 <div id="test-loader" class="loader" aria-hidden="false">
-                     <span class="loader_spin"></span>
-                  </div>
-                 <div id="test-tooltip" class="dv-tooltip" aria-hidden="true"></div>
-              </div>
-              
-              <p class="datavizGrid_item_desc">
-                
-              </p>
-            </div>
-          </div>
-        </section>
+          </section>
+        </div>
       </div>
-      
-    </div>
-  </main>
+    </main>
   
-  <footer class="l-footer">
+    <footer class="l-footer">
       <div class="l-footer_left">
         <span class="l-footer_left_copyright">
           &copy; 2019 Vitality Living Lab
         </span>
       </div>
-      <div class="l-footer_right">
-        
-      </div>
-  </footer>
+      <div class="l-footer_right"></div>
+    </footer>
   
-  <script src="assets/js/main.js"></script>
-  <script src="assets/js/data.js"></script>
-  <script src="assets/js/visualization.js"></script>
-</body>
-
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/visualization.js"></script>
+    
+  </body>
 </html>
