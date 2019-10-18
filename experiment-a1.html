@@ -1,0 +1,116 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+　<meta name="viewport" content="width=device-width,initial-scale=1"> <!-- for responsible -->
+  <title>experiment a</title>
+  <meta name="description" content="data visualization for experiment">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- protect ie compatible mode -->
+  <!-- <link rel="icon" href="favicon.ico">  --><!-- add later -->
+  <meta name="Kenji Wada" content="">
+  <!-- for windows -->
+  <!-- <meta name="msapplication-TileImage" content="image URL" /> -->
+  <!-- <meta name="msapplication-TileColor" content="color code"/> -->
+  <!-- OGP tags for social media -->
+
+  <!-- Google font -->
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans|Noto+Serif|Roboto+Slab" rel="stylesheet">
+
+  <!-- css -->
+  <link rel="stylesheet" href="assets/css/experiment.css">
+  <!-- leaflet css --> 
+  <!-- <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
+  integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+  crossorigin=""/> -->
+  <link rel="stylesheet" href="assets/css/leaflet.css"><!-- for off line -->
+
+  <!-- font awesome for icons -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!-- <script src="assets/lib/jquery3.3.1.min.js"></script> --><!-- for off line -->
+
+  <!-- D3 -->
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <!-- <script src="assets/lib/d3.min.js"></script>  --><!-- for off line -->
+  <!-- <script src="assets/lib/legacy/d3.min.4.10.2.js"></script> -->
+  <!-- <script src="assets/lib/legacy/d3.min.old.js"></script> -->
+
+  <!-- leaflet -->
+  <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
+  integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+  crossorigin=""></script>
+  <!-- <script src="assets/lib/leaflet.js"></script> --><!-- for off line -->
+  <!-- <script src="assets/lib/legacy/leaflet.js"></script> -->
+
+  <!-- ESRI map layers -->
+  <script src="https://unpkg.com/esri-leaflet@2.2.3/dist/esri-leaflet.js"
+  integrity="sha512-YZ6b5bXRVwipfqul5krehD9qlbJzc6KOGXYsDjU9HHXW2gK57xmWl2gU6nAegiErAqFXhygKIsWPKbjLPXVb2g=="
+  crossorigin=""></script>
+  
+  <!-- <script src="assets/lib/esri-leaflet.js"></script>  --> <!-- for off line -->
+  
+  <!-- Turf.js for spatial analysis -->
+  <!-- <script src='https://npmcdn.com/@turf/turf/turf.min.js'></script>
+ -->
+</head>
+
+
+<body>
+  <!-- header -->
+  <!-- <hearder class="l-header"></hearder> -->
+
+
+  <main class="main"> 
+    <section>
+      <div class="assessment">
+        <!-- mp1 -->
+        <div class="assessment_item">
+
+          <h2 class="assessment_item_title">Percentage of sports participation in the city of Eindhoven</h2>
+
+          <div id="mp1" class="assessment_item_canvas">
+            <!-- <defs><filter id="blurStroke"><feGaussianBlur in="SourceGraphic" stdDeviation="3"></feGaussianBlur></filter></defs> -->
+          </div>
+            
+          <div id="mp1-tooltip" class="dv-tooltip" aria-hidden="true"></div>
+          <div class="map_legend" id="mp1-legend">
+            <!-- legend -->
+            <span class="map_legend_title">Sports<br>Participation (%)</span>
+            <table class="map_legend_table">
+              <col width="16">
+              <col width="">
+              <tr class="value4 row">
+                <td class="box"></td>
+                <td class="text">70 < 80</td>
+              </tr>
+              <tr class="value3 row">
+                <td class="box"></td>
+                <td class="text">60 < 70</td>
+              </tr>
+              <tr class="value2 row">
+                <td class="box"></td>
+                <td class="text">50 < 60</td>
+              </tr>
+              <tr class="value1 row">
+                <td class="box"></td>
+                <td class="text">40 < 50</td>
+              </tr>
+              <tr class="noData row">
+                <td class="box"></td>
+                <td class="text">No data</td>
+              </tr>
+            </table>
+          </div> 
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <footer></footer>
+  
+  <script src="assets/js/experiment-a.js"></script>
+</body>
+
+</html>

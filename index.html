@@ -104,11 +104,20 @@
               <i class="fas fa-filter"></i>
             </div>
             <div class="main_dashboard_controls_filter_select">
-              <select class="filter-field form-control custom-select1">
-                <option value="" selected>All</option>
+              <select class="filter-field1 form-control custom-select1">
+                <option value="" selected>All Categories</option>
                 <option value="sports">Sports</option>
                 <option value="environment">Environment</option>
                 <option value="infrastructure">Infrastructure</option>
+                <option value="health">Health</option>
+              </select>
+              <div class="main_dashboard_controls_filter_arrow"></div>
+            </div>
+            <div class="main_dashboard_controls_filter_select">
+              <select class="filter-field2 form-control custom-select1">
+                <option value="" selected>All Types</option>
+                <option value="visualizations">Visualizations</option>
+                <option value="links">Links</option>
               </select>
               <div class="main_dashboard_controls_filter_arrow"></div>
             </div>
@@ -126,7 +135,7 @@
         <div class="main_dashboard_container grid">
           
           <!-- mp1 -->
-          <section class="item" data-category="sports" data-title="Sports participation in 2017">
+          <section class="item" data-category="sports" data-title="Sports participation in 2017" data-type="visualizations">
             <div class="datavizGrid">
               <div class="datavizGrid_item">
                 <h2 class="datavizGrid_item_title title-drag">Sports participation in 2017 (%)</h2>
@@ -174,7 +183,7 @@
           </section>
         
           <!-- ln1 -->
-          <section class="item" data-category="sports" data-title="Sports participation 2006-2017">
+          <section class="item" data-category="sports" data-title="Sports participation 2006-2017" data-type="visualizations">
             <div class="datavizGrid">
               <div class="datavizGrid_item">
                 <h2 class="datavizGrid_item_title title-drag">Sports participation 2006-2017 (%)</h2>
@@ -189,7 +198,7 @@
           </section>
         
           <!-- mp2 -->
-          <section class="item" data-category="infrastructure" data-title="Street lights">
+          <section class="item" data-category="infrastructure" data-title="Street lights" data-type="visualizations">
             <div class="datavizGrid">
               <div class="datavizGrid_item">
                 <h2 class="datavizGrid_item_title title-drag">Street lights</h2>
@@ -205,7 +214,7 @@
           </section>
         
           <!-- mp3 -->
-          <section class="item" data-category="environment" data-title="Green space">
+          <section class="item" data-category="environment" data-title="Green space" data-type="visualizations">
             <div class="datavizGrid">
               <div class="datavizGrid_item">
                 <h2 class="datavizGrid_item_title title-drag">Green space</h2>
@@ -260,7 +269,7 @@
           </section>
         
           <!-- mp4 -->
-          <section class="item" data-category="infrastructure" data-title="Bike routes">
+          <section class="item" data-category="infrastructure" data-title="Bike routes" data-type="visualizations">
             <div class="datavizGrid">
               <div class="datavizGrid_item">
                 <h2 class="datavizGrid_item_title title-drag">Bike routes</h2>
@@ -277,17 +286,40 @@
           </section>
 
           <!-- test > try real-time data here? -->
-          <section class="item" data-category="test" data-title="test">
-            <div class="datavizGrid">
-              <div class="datavizGrid_item">
-                <h2 class="datavizGrid_item_title title-drag">test</h2>
-                <div id="test" class="datavizGrid_item_canvas">
-                  <div id="test-loader" class="loader" aria-hidden="false">
-                    <span class="loader_spin"></span>
-                  </div>
-                  <div id="test-tooltip" class="dv-tooltip" aria-hidden="true"></div>
-                </div>
-                <p class="datavizGrid_item_desc"></p>
+          <section class="item" data-category="health" data-title="" data-type="links">
+            <div class="linkGrid">
+              <div class="linkGrid_item">
+                <h2 class="linkGrid_item_title title-drag">Youth (0-11) Health Monitor</h2>
+                <ul id="test" class="linkGrid_item_canvas">
+                  <li class="linkGrid_item_canvas_desc">
+                    <div class="linkTitle">Description</div>
+                    <div class="linkCont"></div>
+                  </li>
+                  <li class="linkGrid_item_canvas_format">
+                    <div class="linkTitle">Format</div>
+                    <div class="linkCont">
+                      <div class="linkCont_format">
+                        <div class="linkCont_format_type">Inforgraphic</div>
+                        <div class="linkCont_format_data">(PDF)</div>
+                      </div>
+                      
+                    </div>
+                  </li>
+                  <li class="linkGrid_item_canvas_source">
+                    <div class="linkTitle">Source</div>
+                    <div class="linkCont"> 
+                      <a href="https://www.ggdbzo.nl/ggdkompas/eindhoven/Documents/Eindhoven%20Infographic%20positieve%20gezondheid.pdf" class="linkCont_url">
+                        <div class="linkCont_url_name">GGD</div>
+                         <div class="linkCont_url_icon">
+                          <i class="fas fa-external-link-alt"></i>
+                         </div>
+                      </a>
+                    </div>
+                   
+                    
+                  </li>
+                </ul>
+                <p class="linkGrid_item_desc"></p>
               </div>
             </div>
           </section>
